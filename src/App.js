@@ -1,9 +1,14 @@
 import './App.css';
+import CreateTodoList from './components/CreateTodoList';
 import TodoListGroup from './components/TodoListGroup';
 
 function App() {
   return (
-    <TodoListGroup></TodoListGroup>
+    <div>
+      <h1>Todo List</h1>
+      <TodoListGroup></TodoListGroup>
+      <CreateTodoList></CreateTodoList>
+    </div>
   );
 }
 
