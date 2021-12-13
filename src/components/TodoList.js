@@ -1,6 +1,6 @@
 function TodoList(props) {
     return(
-        <div className="todo-item">
+        <div className="todo-item row-item">
             {props.taskName}
         </div>
     );

@@ -13,13 +13,12 @@ function MainTodoList() {
     function handleAddTask(){
         taskList.push(taskName);
         setTaskName("");
-        console.log("mainList: " + taskList);
     }
 
     return(
-        <div>
-            <h1>Todo List</h1>
-            <TodoListGroup /*taskName={taskName}*/ taskList={taskList}></TodoListGroup>
+        <div className="main-page">
+            <h1 className="center-text">Todo List</h1>
+            <TodoListGroup taskList={taskList}></TodoListGroup>
             <CreateTodoList taskName={taskName} updateTaskName={updateTask} handleAddTask={handleAddTask}></CreateTodoList>
         </div>
     );
