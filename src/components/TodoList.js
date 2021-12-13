@@ -1,7 +1,7 @@
-function TodoList() {
+function TodoList(props) {
     return(
-        <div>
-            This is list
+        <div className="todo-item">
+            {props.taskName}
         </div>
     );
 }

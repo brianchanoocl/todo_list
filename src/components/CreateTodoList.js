@@ -1,16 +1,18 @@
-import { useState } from "react";
-
-function CreateTodoList() {
-    const [taskName, setTaskName] = useState("");
+function CreateTodoList(props) {
+    const taskName = props.taskName;
 
     function handleTaskNameChange(event){
-        setTaskName(event.target.value);
+        props.updateTaskName(event.target.value);
+    }
+
+    function handleAddTask(event){
+        props.handleAddTask();
     }
 
     return(
         <div className="create-todo-list">
             <input value={taskName} onChange={handleTaskNameChange}></input>
-            <button>add</button>
+            <button onClick={handleAddTask}>add</button>
         </div>
     );
 }

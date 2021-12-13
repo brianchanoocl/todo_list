@@ -1,10 +1,15 @@
 import TodoList from "./TodoList";
 
-function TodoListGroup() {
+function TodoListGroup(props) {
     return(
-        <>
-            <TodoList></TodoList>
-        </>
+        <div>
+            {
+                props.taskList.map((item, index) => {
+                    console.log("item " + index + " is " + item);
+                   return <TodoList taskName={item} key={index+index}></TodoList>
+                })
+            }
+        </div>
     );
 }
 
