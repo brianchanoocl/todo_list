@@ -1,14 +1,9 @@
 import './App.css';
-import CreateTodoList from './components/CreateTodoList';
-import TodoListGroup from './components/TodoListGroup';
+import MainTodoList from './components/MainTodoList';
 
 function App() {
   return (
-    <div>
-      <h1>Todo List</h1>
-      <TodoListGroup></TodoListGroup>
-      <CreateTodoList></CreateTodoList>
-    </div>
+    <MainTodoList></MainTodoList>
   );
 }
 
