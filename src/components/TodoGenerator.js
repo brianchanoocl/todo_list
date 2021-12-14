@@ -14,8 +14,7 @@ function TodoGenerator(props) {
         if(todoItemDetail.trim() === "")
             alert("dun be lazy, do some work la... = =");
         else{
-            //dispatch({type: UPDATE_TODOLIST, payload: todoItemDetail});
-            dispatch({type: UPDATE_TODOLIST, payload: { TodoItemDetail: todoItemDetail.trim() }});
+            dispatch({type: UPDATE_TODOLIST, payload: { TodoItemDetail: todoItemDetail }});
             setTodoItemDetail("");
         }
     }
