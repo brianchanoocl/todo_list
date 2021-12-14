@@ -15,7 +15,6 @@ function TodoGenerator(props) {
             alert("dun be lazy, do some work la... = =");
         else{
             dispatch({type: UPDATE_TODOLIST, payload: todoItemDetail});
-            //props.handleAddTodoItem(todoItemDetail);
             setTodoItemDetail("");
         }
     }
