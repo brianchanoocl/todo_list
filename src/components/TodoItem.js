@@ -1,7 +1,7 @@
 function TodoItem(props) {
     return(
         <div className="todo-item row-item">
-            {props.todoItem}
+            {props.todoItem.TodoItemDetail}
         </div>
     );
 }

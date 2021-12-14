@@ -9,7 +9,7 @@ function TodoList() {
         <div className="main-page">
             <h1 className="center-text">Todo List</h1>
             <TodoGroup todoItems={todoItems}></TodoGroup>
-            <TodoGenerator /*handleAddTodoItem={handleAddTodoItem}*/></TodoGenerator>
+            <TodoGenerator></TodoGenerator>
         </div>
     );
 }
