@@ -6,7 +6,7 @@ function CreateTodoList(props) {
     }
 
     function handleAddTask(){
-        if(props.taskName.length < 1)
+        if(props.taskName.trim() === "")
             alert("dun be lazy, do some work la... = =");
         else
             props.handleAddTask();

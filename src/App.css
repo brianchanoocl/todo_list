@@ -2,10 +2,6 @@
   text-align: center;
 }
 
-/* MainTodoList{
-  margin: 0 auto;
-} */
-
 .center-text {
   text-align: center;
 }
@@ -13,8 +9,6 @@
 .main-page, .center-item {
   width: 80%;
   margin: 2% auto;
-  /* color: red;
-  background-color: lightgreen; */
 }
 
 .todo-item {
@@ -23,12 +17,7 @@
   font-size: 21px;
   border: 2px solid #44474a;
   padding: 1%;
-  /* color: red;
-  background-color: lightgreen; */
-}
-
-.row-item {
-  height: 32px;
+  overflow-wrap: break-word;
 }
 
 button.row-item {
