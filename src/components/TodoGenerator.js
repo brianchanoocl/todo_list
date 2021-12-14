@@ -1,6 +1,8 @@
 import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { UPDATE_TODOLIST } from "../constants/constants";
+import { v4 as uuidv4 } from "uuid";
+
 
 function TodoGenerator(props) {
     const [todoItemDetail, setTodoItemDetail] = useState("");
@@ -14,7 +16,7 @@ function TodoGenerator(props) {
         if(todoItemDetail.trim() === "")
             alert("dun be lazy, do some work la... = =");
         else{
-            dispatch({type: UPDATE_TODOLIST, payload: { TodoItemDetail: todoItemDetail }});
+            dispatch({type: UPDATE_TODOLIST, payload: {id: uuidv4(), text: todoItemDetail, done: false}});
             setTodoItemDetail("");
         }
     }
