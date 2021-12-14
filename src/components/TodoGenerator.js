@@ -1,7 +1,10 @@
 import { useState } from "react";
+import { useDispatch } from "react-redux";
+import { UPDATE_TODOLIST } from "../constants/constants";
 
 function TodoGenerator(props) {
     const [todoItemDetail, setTodoItemDetail] = useState("");
+    const dispatch = useDispatch();
 
     function handleTodoItemDetailChange(event){
        setTodoItemDetail(event.target.value);
@@ -11,7 +14,8 @@ function TodoGenerator(props) {
         if(todoItemDetail.trim() === "")
             alert("dun be lazy, do some work la... = =");
         else{
-            props.handleAddTodoItem(todoItemDetail);
+            dispatch({type: UPDATE_TODOLIST, payload: todoItemDetail});
+            //props.handleAddTodoItem(todoItemDetail);
             setTodoItemDetail("");
         }
     }
