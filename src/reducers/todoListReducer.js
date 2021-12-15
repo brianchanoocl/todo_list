@@ -6,16 +6,16 @@ const todoListReducer = ( state = initState, action ) => {
     switch(action.type) {
         case UPDATE_TODOLIST:
             console.log(action.payload);
-            return {...state, todoItems: [...state.todoItems, action.payload]};
+            return {todoItems: [...state.todoItems, action.payload]};
         case UPDATE_TODOITEM_DONE_STATUS:
-            return { ...state, todoItems: state.todoItems.map(item => {
+            return { todoItems: state.todoItems.map(item => {
                 if(item.id === action.payload.id) {
                     item.done = !item.done;
                 }
                 return item;
             })};
         case REMOVE_TODOITEM:
-            return { ...state, todoItems: state.todoItems.filter(item => item.id !== action.payload.id)};
+            return {todoItems: state.todoItems.filter(item => item.id !== action.payload.id)};
         default:
             return state;
     }

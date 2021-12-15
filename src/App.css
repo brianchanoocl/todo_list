@@ -36,10 +36,11 @@ input.row-item {
   height: 36px;
 }
 
-.done-check-box {
+.remove-check-box {
   float: right;
   margin-right: 1%;
   cursor: pointer;
+  z-index: 1;
 }
 
 .done-todo-item {

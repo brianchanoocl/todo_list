@@ -8,7 +8,7 @@ function TodoGroup() {
         <div className="center-item">
             {
                 todoItems.map((item, index) => {
-                   return <TodoItem todoItem={item} key={index+index}></TodoItem>
+                   return <TodoItem todoItem={item} key={item+index}></TodoItem>
                 })
             }
         </div>

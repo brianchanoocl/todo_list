@@ -4,7 +4,7 @@ import { UPDATE_TODOLIST } from "../constants/constants";
 import { v4 as uuidv4 } from "uuid";
 
 
-function TodoGenerator(props) {
+function TodoGenerator() {
     const [todoItemDetail, setTodoItemDetail] = useState("");
     const dispatch = useDispatch();
 
@@ -17,8 +17,8 @@ function TodoGenerator(props) {
             alert("dun be lazy, do some work la... = =");
         else{
             dispatch({type: UPDATE_TODOLIST, payload: {id: uuidv4(), text: todoItemDetail, done: false}});
-            setTodoItemDetail("");
         }
+        setTodoItemDetail("");
     }
 
     return(
