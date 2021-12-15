@@ -1,4 +1,5 @@
 import { useDispatch } from "react-redux";
+import { deleteTodoItem } from "../APIs/todos";
 import { REMOVE_TODOITEM, UPDATE_TODOITEM_DONE_STATUS } from "../constants/constants";
 
 
@@ -11,7 +12,9 @@ function TodoItem(props) {
 
     function removeTodoItem(event) {
         event.stopPropagation();
-        dispatch({type: REMOVE_TODOITEM, payload: props.todoItem});
+        deleteTodoItem(props.todoItem.id).then(() => {
+            dispatch({type: REMOVE_TODOITEM, payload: props.todoItem});
+        })
     }
 
     return(

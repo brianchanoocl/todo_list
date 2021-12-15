@@ -19,7 +19,6 @@ function TodoGenerator() {
             addTodoItem({ text: todoItemDetail, done: false }).then((response) => {
                 dispatch({type: UPDATE_TODOLIST, payload: response.data});
             });
-            //dispatch({type: UPDATE_TODOLIST, payload: {id: uuidv4(), text: todoItemDetail, done: false}});
         }
         setTodoItemDetail("");
     }
