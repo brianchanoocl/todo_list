@@ -1,4 +1,4 @@
-import { UPDATE_TODOITEM_DONE_STATUS, UPDATE_TODOLIST, REMOVE_TODOITEM, INIT_TODO } from "../constants/constants";
+import { UPDATE_TODOITEM_DONE_STATUS, UPDATE_TODOLIST, REMOVE_TODOITEM, INIT_TODO, UPDATE_TODOITEM_DETAIL } from "../constants/constants";
 
 const initState = { todoItems: [] };
 
@@ -9,6 +9,13 @@ const todoListReducer = ( state = initState, action ) => {
             return {todoItems:  action.payload};
         case UPDATE_TODOLIST:
             return {todoItems: [...state.todoItems, action.payload]};
+        case UPDATE_TODOITEM_DETAIL:
+            return { todoItems: state.todoItems.map(item => {
+                if(item.id === action.payload.id) {
+                    item.text = action.payload.text;
+                }
+                return item;
+            })};
         case UPDATE_TODOITEM_DONE_STATUS:
             return { todoItems: state.todoItems.map(item => {
                 if(item.id === action.payload.id) {

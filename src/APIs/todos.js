@@ -15,3 +15,7 @@ export const deleteTodoItem = (id) => {
 export const toggleTodoItemDoneStatus = (item) => {
     return api.put("/todos/" + item.id, item);
 }
+
+export const updateTodoItenDetail = (item) => {
+    return api.put("/todos/" + item.id, item);
+}

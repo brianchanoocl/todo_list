@@ -1,3 +1,4 @@
+import { SmileOutlined } from '@ant-design/icons/lib/icons';
 import { useSelector } from 'react-redux';
 
 function DoneItems() {
@@ -5,7 +6,7 @@ function DoneItems() {
 
     return (
         <div className="main-page center-text">
-            <h1 className="center-item">Done List</h1>
+            <h1 className="center-item"><SmileOutlined /> Done List <SmileOutlined /></h1>
             <div className="center-item">
             {
                 todoItems.filter(item => item.done).map((item, index) => {

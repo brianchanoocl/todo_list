@@ -2,6 +2,7 @@ import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { UPDATE_TODOLIST } from "../constants/constants";
 import { addTodoItem } from "../APIs/todos";
+import { Button, Input } from "antd";
 
 
 function TodoGenerator() {
@@ -25,8 +26,8 @@ function TodoGenerator() {
 
     return(
         <div className="center-item row-item center-text">
-            <input className="row-item" value={todoItemDetail} onChange={handleTodoItemDetailChange}></input>
-            <button className="row-item" onClick={handleAddTodoItem}>add</button>
+            <Input className="row-item" value={todoItemDetail} placeholder="Please add your task here..." onChange={handleTodoItemDetailChange}></Input>
+            <Button type="primary" className="row-item" onClick={handleAddTodoItem}>Add</Button>
         </div>
     );
 }

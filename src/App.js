@@ -12,6 +12,8 @@ import { useEffect } from 'react';
 import { getTodos } from './APIs/todos';
 import { useDispatch } from 'react-redux';
 import { INIT_TODO } from './constants/constants';
+import { Button } from 'antd';
+import { AlertOutlined, CoffeeOutlined, HomeOutlined } from '@ant-design/icons/lib/icons';
 
 function App() {
   const dispatch = useDispatch();
@@ -28,9 +30,9 @@ function App() {
       <Router>
       <div>
         <nav>
-              <button className='link'><Link to="/">Home</Link></button>
-              <button className='link'><Link to="/done">Done</Link></button>
-              <button className='link'><Link to="/undone">Undone</Link></button>
+              <Button type="text" className='link'><Link to="/"><HomeOutlined /> Home</Link></Button>
+              <Button type="text" className='link'><Link to="/done"><CoffeeOutlined /> Done</Link></Button>
+              <Button type="text" className='link'><Link to="/undone"><AlertOutlined /> Undone</Link></Button>
         </nav>
         <Switch>
           <Route exact path="/done">
