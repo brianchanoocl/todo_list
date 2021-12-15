@@ -17,11 +17,18 @@ function TodoItem(props) {
     };
     const handleOk = (event) => {
         event.stopPropagation();
-        console.log("new name: "+newTodoItemDetail);
-        updateTodoItenDetail({...props.todoItem, text: newTodoItemDetail}).then((response) => {
-            dispatch({type: UPDATE_TODOITEM_DETAIL, payload: response.data});
-        });
-        setIsModalVisible(false);
+        if(newTodoItemDetail.trim() === "")
+            alert("dun be lazy, do some work la... = =");
+        else{
+            updateTodoItenDetail({...props.todoItem, text: newTodoItemDetail}).then((response) => {
+                dispatch({type: UPDATE_TODOITEM_DETAIL, payload: response.data});
+            });
+            setIsModalVisible(false);
+        }
+        // updateTodoItenDetail({...props.todoItem, text: newTodoItemDetail}).then((response) => {
+        //     dispatch({type: UPDATE_TODOITEM_DETAIL, payload: response.data});
+        // });
+        // setIsModalVisible(false);
     };
     const handleCancel = (event) => {
         event.stopPropagation();
