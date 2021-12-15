@@ -25,10 +25,6 @@ function TodoItem(props) {
             });
             setIsModalVisible(false);
         }
-        // updateTodoItenDetail({...props.todoItem, text: newTodoItemDetail}).then((response) => {
-        //     dispatch({type: UPDATE_TODOITEM_DETAIL, payload: response.data});
-        // });
-        // setIsModalVisible(false);
     };
     const handleCancel = (event) => {
         event.stopPropagation();
@@ -53,14 +49,16 @@ function TodoItem(props) {
     }
 
     return(
-        <div onClick={indicateTodoItemAsDone} className="todo-item row-item">
-            <span className={props.todoItem.done? "done-todo-item" : ""}>{props.todoItem.text}</span>
-            <span className="remove-check-box"><FormOutlined onClick={showModal} /> <CloseOutlined onClick={removeTodoItem} /></span>
+        <>
             <Modal title="Update the todo item name" visible={isModalVisible} onOk={handleOk} onCancel={handleCancel}>
                 <p>Please type the new todo item name here:</p>
                 <Input placeholder="Basic usage" value={newTodoItemDetail} onChange={handleChangeTodoItemDetail} />
             </Modal>
-        </div>
+            <div onClick={indicateTodoItemAsDone} className="todo-item row-item">
+                <span className={props.todoItem.done ? "done-todo-item" : ""}>{props.todoItem.text}</span>
+                <span className="remove-check-box"><FormOutlined onClick={showModal} /> <CloseOutlined onClick={removeTodoItem} /></span>
+            </div>
+        </>
     );
 }
 

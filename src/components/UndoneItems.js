@@ -9,9 +9,11 @@ function UndoneItems() {
             <h1 className="center-item "><FrownOutlined /> Undone List <FrownOutlined /></h1>
             <div className="center-item">
             {
+                todoItems.filter(item => !item.done).length > 0 ? 
                 todoItems.filter(item => !item.done).map((item, index) => {
-                   return <p key={item+index}>{item.text}</p>
-                })
+                   return <p className='todo-item-display todo-item-display-undone' key={item+index}>{item.text}</p>
+                }) :
+                <p className="list-empty-label">輕輕鬆鬆又放工~</p>
             }
             </div>
         </div>

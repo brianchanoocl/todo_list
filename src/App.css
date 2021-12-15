@@ -59,3 +59,56 @@ input.row-item {
 a:visited{
   color:white;
 }
+
+.todo-item-display {
+  width: 40%;
+  margin: 1% auto;
+  font-size: 15px;
+  border: 1px solid #44474a;
+  border-radius: 6px;
+  padding: 1%;
+  overflow-wrap: break-word;
+}
+
+.todo-item-display-done {
+  background-color: rgb(212, 236, 225);
+}
+
+.todo-item-display-undone {
+  background-color: rgb(243, 216, 212);
+}
+
+.list-empty-label {
+  font-size: 27px;
+  width: 60%;
+  margin: 1% auto;
+  font-size: 27px;
+  padding: 1%;
+  overflow-wrap: break-word;
+}
+
+.rainbow {
+  animation: christmas-confirm-btn-flash 2s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  animation-play-state: running;
+}
+
+@keyframes christmas-confirm-btn-flash {
+  0% {
+    border-color: green;
+    color: green;
+  }
+  25% {
+    border-color: red;
+    color: red;
+  }
+  75% {
+    border-color: rgb(224, 224, 24);
+    color: rgb(224, 224, 24);
+  }
+  100% {
+    border-color: green;
+    color: green;
+  }
+}
