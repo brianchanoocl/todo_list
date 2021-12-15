@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { UPDATE_TODOLIST } from "../constants/constants";
-import { v4 as uuidv4 } from "uuid";
+import { addTodoItem } from "../APIs/todos";
 
 
 function TodoGenerator() {
@@ -16,7 +16,10 @@ function TodoGenerator() {
         if(todoItemDetail.trim() === "")
             alert("dun be lazy, do some work la... = =");
         else{
-            dispatch({type: UPDATE_TODOLIST, payload: {id: uuidv4(), text: todoItemDetail, done: false}});
+            addTodoItem({ text: todoItemDetail, done: false }).then((response) => {
+                dispatch({type: UPDATE_TODOLIST, payload: response.data});
+            });
+            //dispatch({type: UPDATE_TODOLIST, payload: {id: uuidv4(), text: todoItemDetail, done: false}});
         }
         setTodoItemDetail("");
     }
