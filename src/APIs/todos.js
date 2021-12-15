@@ -11,3 +11,7 @@ export const addTodoItem = (item) => {
 export const deleteTodoItem = (id) => {
     return api.delete("/todos/" + id);
 }
+
+export const toggleTodoItemDoneStatus = (id, item) => {
+    return api.put("/todos/" + id, item);
+}

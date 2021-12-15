@@ -1,5 +1,5 @@
 import { useDispatch } from "react-redux";
-import { deleteTodoItem } from "../APIs/todos";
+import { deleteTodoItem, toggleTodoItemDoneStatus } from "../APIs/todos";
 import { REMOVE_TODOITEM, UPDATE_TODOITEM_DONE_STATUS } from "../constants/constants";
 
 
@@ -7,7 +7,9 @@ function TodoItem(props) {
     const dispatch = useDispatch();
 
     function indicateTodoItemAsDone() {
-        dispatch({type: UPDATE_TODOITEM_DONE_STATUS, payload: props.todoItem});
+        toggleTodoItemDoneStatus(props.todoItem.id, {...props.todoItem, done: !props.todoItem.done}).then((response) => {
+            dispatch({type: UPDATE_TODOITEM_DONE_STATUS, payload: response.data});
+        });
     }
 
     function removeTodoItem(event) {
