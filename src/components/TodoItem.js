@@ -7,7 +7,7 @@ function TodoItem(props) {
     const dispatch = useDispatch();
 
     function indicateTodoItemAsDone() {
-        toggleTodoItemDoneStatus(props.todoItem.id, {...props.todoItem, done: !props.todoItem.done}).then((response) => {
+        toggleTodoItemDoneStatus({...props.todoItem, done: !props.todoItem.done}).then((response) => {
             dispatch({type: UPDATE_TODOITEM_DONE_STATUS, payload: response.data});
         });
     }
