@@ -12,14 +12,14 @@ const todoListReducer = ( state = initState, action ) => {
         case UPDATE_TODOITEM_DETAIL:
             return { todoItems: state.todoItems.map(item => {
                 if(item.id === action.payload.id) {
-                    item.text = action.payload.text;
+                    item = action.payload;
                 }
                 return item;
             })};
         case UPDATE_TODOITEM_DONE_STATUS:
             return { todoItems: state.todoItems.map(item => {
                 if(item.id === action.payload.id) {
-                    item.done = !item.done;
+                    item = action.payload;
                 }
                 return item;
             })};

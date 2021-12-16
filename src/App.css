@@ -48,11 +48,9 @@ input.row-item {
 }
 
 .link {
-  margin-left: 2%;
+  margin-left: 1%;
   margin-top: 1%;
-  font-size: 21px;
-  border-radius: 5px;
-  background-color: #1580eb;
+  font-size: 18px !important;
   text-decoration: none;
 }
 
