@@ -86,13 +86,13 @@ a:visited{
 }
 
 .rainbow {
-  animation: christmas-confirm-btn-flash 2s;
+  animation: rainbow-animation 2s;
   animation-iteration-count: infinite;
   animation-timing-function: linear;
   animation-play-state: running;
 }
 
-@keyframes christmas-confirm-btn-flash {
+@keyframes rainbow-animation {
   0% {
     border-color: green;
     color: green;

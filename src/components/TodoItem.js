@@ -15,8 +15,7 @@ function TodoItem(props) {
         event.stopPropagation();
         setIsModalVisible(true);
     };
-    const handleOk = (event) => {
-        event.stopPropagation();
+    const handleOk = () => {
         if(newTodoItemDetail.trim() === "")
             alert("dun be lazy, do some work la... = =");
         else{
@@ -26,8 +25,7 @@ function TodoItem(props) {
             setIsModalVisible(false);
         }
     };
-    const handleCancel = (event) => {
-        event.stopPropagation();
+    const handleCancel = () => {
        setIsModalVisible(false);
     };
 
