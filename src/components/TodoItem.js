@@ -13,6 +13,7 @@ function TodoItem(props) {
     const [newTodoItemDetail, setNewToDoItemDetail] = useState(props.todoItem.text);
     const showModal = (event) => {
         event.stopPropagation();
+        setNewToDoItemDetail(props.todoItem.text);
         setIsModalVisible(true);
     };
     const handleOk = () => {
